@@ -1,0 +1,24 @@
+{
+  "name": "server-nodejs-unity",
+  "version": "1.0.0",
+  "description": "Node JS server dedicated to communication with Unity Engine and the creation of rooms for multiplayer games by XamSav.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XamSav/Server-NodeJS-Unity.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "UnityEngine",
+    "Multiplayer"
+  ],
+  "author": "XamSav",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/XamSav/Server-NodeJS-Unity/issues"
+  },
+  "homepage": "https://github.com/XamSav/Server-NodeJS-Unity#readme"
+}
