@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+</head>
+<body>
+    <h1>Tabla de Clasificaciones</h1>
+    <table id="leaderboardTable" border="1">
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se insertarán aquí mediante JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        async function loadLeaderboard() {
+        const response = await fetch('/api/leaderboard'); // Solicitar los datos JSON
+
+        if (!response.ok) {
+            console.error('Error al cargar el leaderboard');
+            return;
+        }
+
+        const data = await response.json();
+        const leaderboardTable = document.getElementById('leaderboardTable').getElementsByTagName('tbody')[0];
+
+        // Limpiar la tabla antes de insertar los nuevos datos
+        leaderboardTable.innerHTML = '';
+
+        // Insertar las filas de jugadores en la tabla
+        console.log(data.leaderboard)
+        data.leaderboard[0].forEach(player => {
+            const row = leaderboardTable.insertRow();
+            row.insertCell(0).textContent = player.username;
+            row.insertCell(1).textContent = player.score;
+        });
+    }
+
+
+        // Cargar los datos del leaderboard cuando se cargue la página
+        window.onload = loadLeaderboard;
+    </script>
+</body>
+</html>

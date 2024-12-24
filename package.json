@@ -23,7 +23,10 @@
   },
   "homepage": "https://github.com/XamSav/Server-NodeJS-Unity#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
     "nodemon": "^3.1.9",
+    "sqlite3": "^5.1.7",
     "ws": "^8.18.0"
   }
 }
